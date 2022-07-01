@@ -1,2 +1,2 @@
 # 100-days-of-python
- 100 days of pthon.
+ 100 days of python.
