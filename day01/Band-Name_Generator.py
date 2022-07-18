@@ -1,6 +1,6 @@
 # Band Name Generator (DAY-1)
 
-print("Welcome to the Band Name Generator :)")
+print("####### Welcome to the Band Name Generator #######")
 
 print(" ")
 

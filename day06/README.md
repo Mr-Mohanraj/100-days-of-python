@@ -1,4 +1,5 @@
 # Day 6
+# function and method using into move the guys to the destination
 
 ## Exercise
 

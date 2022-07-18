@@ -1,6 +1,6 @@
-print("Welcome TO Treasure Island :)")
+print("#------- Welcome TO Treasure Island -------#")
 print(' ')
-print('Your Mission is to find theTreasure.')
+print('Your Mission is to find The Treasure.')
 print(' ')
 user_input = input("You're at a cross road. Where do you want to go? Type 'left!' or 'right!'--").lower()
 if user_input == 'right':
@@ -8,9 +8,9 @@ if user_input == 'right':
 elif user_input == 'left':
     user_input = input("You're come to a lake. There is on island in the middle of the lake. Type 'wait to for boat. Type 'swim' to swim across--").lower()
     if user_input == 'swim':
-        print()
+        print("Owo I forgot it, I do not know 'how to swim'!!")
     elif user_input == 'wait':
-        user_input = input("You arrive at the island unharmed. There is a house with 3 doors. One red, One yellow and one blue. Which color do you choose?--")
+        user_input = input("You arrive at the island unharmed. There is a house with 3 doors. One red, One yellow and one blue. Which color do you choose?--").lower()
         if user_input == 'yellow':
             print("You Win The Treasure")
             print("But Treasure is gone!!!")

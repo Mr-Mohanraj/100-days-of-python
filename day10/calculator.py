@@ -33,7 +33,7 @@ def calculator():
 
         num2 = float(input("What's the second number?: "))
 
-        calculation_function = operations[operation_symbol]
+        calculation_function = operations[operation_symbol]# for choose function based on the operation
 
         answer = calculation_function(num1, num2)
 

@@ -84,7 +84,7 @@ SYMBOLS = [
 NUMBERS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 
-print("Welcome to the PyPassword Generator! ")
+print("#-------> Welcome to the PyPassword Generator! <-------#")
 
 nr_letters = int(input("How many letterd would you like in your password?\n"))
 nr_symbol = int(input("How many symbols would you like?\n"))
@@ -95,7 +95,7 @@ password_list = []
 for char in range(1, nr_letters + 1):  # fro choice letters from the list
     password_list.append(random.choice(LETTERS))
 
-# choice function for choice randomly somthing from the list
+# choice() function for choice randomly somthing from the list
 
 for char in range(1, nr_symbol + 1):  # for choice symbols from the list
     password_list.append(random.choice(SYMBOLS))

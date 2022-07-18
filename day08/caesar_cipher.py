@@ -88,8 +88,8 @@ while should_continue:
     shift = shift % 26  # for get remainde of shift number
     caesar(text, shift, direction)
 
-    result = input("Type 'yes' if you want to go again. Otherwise type 'no'::").lower()
-    if result == 'no':
+    result = input("Type 'y' if you want to go again. Otherwise type 'n'::").lower()
+    if result == 'n':
         should_continue = False
         print('Goodbye')
 

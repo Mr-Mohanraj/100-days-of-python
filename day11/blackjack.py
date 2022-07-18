@@ -23,24 +23,27 @@ def computerCards():
 
 
 def check_winner(customer_total, computer_total):
-
-    if computer_total == customer_total:
-        print("Match was draw")
-    elif computer_total > customer_total:
-        print("You went over.you lose ")
+    """Ruturn Winner"""    
+    if (customer_total > computer_total) and (customer_total <= 21):
+        print("You Win")
+    elif (customer_total < computer_total) and (computer_total <= 21):
+        print("You Lose")
+    elif customer_total == computer_total:
+        print("Match Drew")
+    elif (computer_total > 21) or (customer_total > 21):
+        if computer_total > 21 or customer_total > 21 :
+            if customer_total < computer_total:
+                print("You Win")
+            else:
+                print("You Lose")
     else:
-        print("You win")
-
-
-def check_rule(customer_total, computer_total):
-
-    if customer_total >= 21 and computer_total >= 21:
-        return True
-    else:
-        return False
+        print("something is worng!!!,Please try again!")
 
 
 def getcard_totalValue(customer_gettotal=True, computer_gettotal=False):
+    if customer_gettotal == False:
+        computer_gettotal = True
+    
     if computer_gettotal and customer_gettotal:
         print("You must set either one of the value set to False")
     elif computer_gettotal:
@@ -56,6 +59,8 @@ def getcard_totalValue(customer_gettotal=True, computer_gettotal=False):
 
 
 def getCard(customer_getcard=True, computer_getcard=False):
+    if customer_getcard == False:
+        computer_getcard = True
 
     if computer_getcard and customer_getcard:
         print("You must set either one of the value set to False")
@@ -69,10 +74,18 @@ def getCard(customer_getcard=True, computer_getcard=False):
         return computer_cards_list
 
 
-def main():
-    customerCards()
-    computerCards()
+def check_rule(customer_total, computer_total):
+    """Customer total and computer total """
+    
+    if customer_total >= 21 and computer_total >= 21:
+        return False
+    elif customer_total <= 21 and computer_total <= 21:
+        if customer_total < 17 or computer_total < 17:
+            return getCard(),getCard(customer_getcard=False),getcard_totalValue(),getcard_totalValue(customer_gettotal=False)
+    else:
+        print("Something is wrong!!!, Please try again! check_rule")
 
+def main():
     computer_total = getcard_totalValue(customer_gettotal=False, computer_gettotal=True)
     customer_total = getcard_totalValue()
 
@@ -87,29 +100,25 @@ def main():
             f"Computer's cards: {computer_cards_list}, Current score: {computer_total}"
         )
         check_winner(customer_total, computer_total)
+    elif choose == "y":
+        checked = check_rule(customer_total, computer_total)  
+        print(f"Your cards : {checked[0]}, Current score: {checked[2]}")
+        print(f"Computer's cards: {checked[1]}, Current score: {checked[3]}")
+        check_winner(checked[2], checked[3])
     else:
-        computer_total = getcard_totalValue(
-            customer_gettotal=False, computer_gettotal=True
-        )
-        customer_total = getcard_totalValue()
-        rule = check_rule(customer_total, computer_total)
-
-        if rule:
-            get_customer = getCard(customer_getcard=True)
-            get_computer = getCard(customer_getcard=False, computer_getcard=True)
-        else:
-            computer_total = getcard_totalValue(
-                customer_gettotal=False, computer_gettotal=True
-            )
-            customer_total = getcard_totalValue()
-            print(
-                f"Your cards : {customer_cards_list}, Current score: {customer_total}"
-            )
-            print(
-                f"Computer's cards: {computer_cards_list}, Current score: {computer_total}"
-            )
-            check_winner(customer_total, computer_total)
+        print("Plase choose either one of the 'y' or 'n'!!!")
 
 
 if __name__ == "__main__":
-    main()
+
+    should_run = True
+    while should_run:
+        play_not = input("Enter if you want play one time,Type 'y' for paly OR type 'n' for quit--->").lower()
+        if play_not == "y":
+            print("#----- Welcome to our game -----#")
+            main()
+        elif play_not == "n":
+            should_run = False
+            print("Wlecome back sir :)")
+        else:
+            print(f"Please enter either one yes or no.your inpute --->{play_not}")

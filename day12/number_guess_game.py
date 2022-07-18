@@ -1,10 +1,8 @@
 import random
 
-
 computer_guess = random.randint(1, 100)
-print(computer_guess)
 
-print("Welcome to the Number Guessing Game :)-")
+print("#-------> Welcome to the Number Guessing Game <-------#")
 print("I'M thinking of a number between 1 and 100")
 
 difficulty = input("Choose a difficulty.Type 'easy' or 'hard': ").lower()
@@ -26,6 +24,9 @@ while should_continue and guess_attempts > 0:
     high = 100
     low = 1
     user_guess = int(input("Make a guess: "))
+    
+    if  user_guess < 0:
+        print(f"Please Enter Positive number, your number --> {user_guess}")
 
     if user_guess == computer_guess:
         print("You win")

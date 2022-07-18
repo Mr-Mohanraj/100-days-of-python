@@ -1,4 +1,4 @@
-import random # for random choose
+import random
 from words import main_words_list# main_words_list-for words
 
 states = [
@@ -61,7 +61,7 @@ states = [
 random_word = random.choice(main_words_list)# for choice random word from the list
 
 display = list()
-for n in range(len(random_word)):# for add '_' into the display list
+for n in range(len(random_word)):# for add '_' into the display list using append() function
     display.append('_')
 
 lives = 6 # for lives to play or choice wrong word
@@ -81,12 +81,11 @@ while not end_game:
         if lives == 0:
             end_game = True
             print("You lose")
-            print(f"The Word is {random_word }")
+            print(f"The Word -->{random_word }<--")
     
     if '_' not in display:# for check all letters are correct or not
         end_game = True
         print('YOu win!')
         print(display)
-    
     
     print(states[lives])# for print the picture of lives
