@@ -15,6 +15,8 @@ food = Food()
 scoreboard = Scoreboard()
 
 screen.listen()
+# Up,Down,Left,Right are arrow key inside in the keyboard
+# snake.up,snake.down,snake.left,snake.right are function if the snake class
 screen.onkey(snake.up, "Up")
 screen.onkey(snake.down, "Down")
 screen.onkey(snake.left, "Left")
@@ -35,7 +37,7 @@ while game_is_on:
         game_is_on = False
         scoreboard.game_over()
 
-    for segment in snake.segments:
+    for segment in snake.snake_part:
         if segment == snake.head:
             pass
         elif snake.head.distance(segment) < 10:

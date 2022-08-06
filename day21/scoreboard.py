@@ -15,6 +15,7 @@ class Scoreboard(Turtle):
         self.update_scoreboard()
 
     def update_scoreboard(self):
+        #  write() function for write something on the turtle screen
         self.write(f"Score: {self.score}", align=ALIGNMENT, font=FONT)
 
     def game_over(self):

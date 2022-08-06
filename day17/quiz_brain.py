@@ -9,7 +9,7 @@ class QuizBrain:
         return self.question_number < len(self.question_list)
 
     def next_question(self):
-        current_question = self.question_list[self.question_number]# for get value in the list based on the question number
+        current_question = self.question_list[self.question_number]# for get value from the list based on the question number
         print("current Question", current_question.answer)
         self.question_number += 1
         user_answer = input(f"Q.{self.question_number}: {current_question.text} (True/False): ")

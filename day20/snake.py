@@ -1,6 +1,6 @@
 from turtle import Turtle, Screen
 """IN Turtle 0 , 90, 180 and 270 are degree of position"""
-START_POSITION = [(0, 0), (-20, 0), (-40, 0)]  # for coordination of the turtle
+START_POSITION = [(0, 0), (-20, 0), (-40, 0)]  # for coordination of the turtle(head body part)
 MOVE_DISTANCE = 20
 UP = 90
 DOWN = 270
